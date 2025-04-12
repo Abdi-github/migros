@@ -1,5 +1,7 @@
 volumes:
   db-store:
+  pma-session-store:
+
 
 services:
   app:
@@ -66,6 +68,21 @@ services:
       - MYSQL_USER=${DB_USERNAME}
       - MYSQL_PASSWORD=${DB_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_HOST=${DB_HOST}
+      - PMA_USER=${DB_USERNAME}
+      - PMA_PASSWORD=${DB_PASSWORD}
+    ports:
+      - 8095:80
+    volumes:
+      - pma-session-store:/sessions
+    networks:
+      - migros
+      - traefik_proxy  
+
 
   # mailpit:
   #   image: axllent/mailpit
