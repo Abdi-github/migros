@@ -1,0 +1,35 @@
+# Ignore node modules
+node_modules/
+
+# Ignore vendor directory
+vendor/
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore build and cache files
+/public/storage
+/storage/*.key
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/testing
+/storage/framework/views
+/storage/logs
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore test result files
+coverage/
+
+# Ignore npm debug log
+npm-debug.log*
+
+# Ignore yarn lock file
+yarn.lock
